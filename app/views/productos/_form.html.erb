@@ -1,37 +1,58 @@
 <%= form_with(model: producto) do |form| %>
-  <% if producto.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(producto.errors.count, "error") %> prohibited this producto from being saved:</h2>
-
-      <ul>
-        <% producto.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+  <div class="row">
+    <div class="col-12">
+      <% if producto.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(producto.errors.count, "error") %> prohibited this producto from being saved:</h2>
+    
+          <ul>
+            <% producto.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :nombre %>
-    <%= form.text_field :nombre %>
+    
+  </div>
+  
+  <div class="row my-1">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"><%= form.label :nombre, class:"control-label"%></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"><%= form.text_field :nombre, class:"form-control"%></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+  </div>
+  
+  <div class="row my-1">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"><%= form.label :precio, class:"control-label"%></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"><%= form.text_field :precio, class:"form-control"%></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+  </div>
+  
+  <div class="row my-1">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"><%= form.label :categoria, class:"control-label"%></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"><%= form.text_field :categoria, class:"form-control"%></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+  </div>
+  
+  <div class="row my-1">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"><%= form.label :estado, class:"control-label"%></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"><%= form.text_field :estado, class:"form-control"%></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+  </div>
+  
+  <div class="row my-1">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+      <div class="d-grid gap-2">
+      <%= form.submit 'Guardar', :class => 'btn btn-secondary btn-lg' %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
   </div>
 
-  <div class="field">
-    <%= form.label :precio %>
-    <%= form.number_field :precio %>
-  </div>
-
-  <div class="field">
-    <%= form.label :categoria %>
-    <%= form.text_field :categoria %>
-  </div>
-
-  <div class="field">
-    <%= form.label :estado %>
-    <%= form.number_field :estado %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+ 
 <% end %>
